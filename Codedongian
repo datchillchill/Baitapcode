@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính Tổng Hai Số</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 300px;
+            margin: auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tính Tổng Hai Số</h1>
+        <label for="num1">Nhập số thứ nhất:</label>
+        <input type="number" id="num1" required>
+        
+        <label for="num2">Nhập số thứ hai:</label>
+        <input type="number" id="num2" required>
+        
+        <button onclick="calculateSum()">Tính Tổng</button>
+        
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculateSum() {
+            // Lấy giá trị từ các input
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            
+            // Kiểm tra nếu các giá trị nhập vào là hợp lệ
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById('result').innerHTML = 'Vui lòng nhập cả hai số.';
+                return;
+            }
+            
+            // Tính tổng
+            var sum = num1 + num2;
+            
+            // Hiển thị kết quả
+            document.getElementById('result').innerHTML = 'Tổng của hai số là: ' + sum;
+        }
+    </script>
+</body>
+</html>
+
